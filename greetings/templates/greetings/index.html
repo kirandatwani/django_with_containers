@@ -1,14 +1,19 @@
 {% if greeting_list %}
-    <ul>
+<ul>
     {% for greeting in greeting_list %}
-        <li>
-          {{ greeting.message }}
-          <span><a href="{% url 'greetings:update' greeting.id %}">edit</a></span>
-          <span><a href="{% url 'greetings:delete' greeting.id %}">delete</a></span>
-        </li>
+    <li>
+        {{ greeting.message }}
+        <span><a href="{% url 'greetings:update' greeting.id %}">edit</a></span>
+        <span><a href="{% url 'greetings:delete' greeting.id %}">delete</a></span>
+    </li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p>No greetings are available.</p>
+<img src="https://cdn.pixabay.com/photo/2020/08/11/14/34/greeting-5480092_960_720.png" alt=="hello" width=35%>
+<p>No greetings are available.</p>
 {% endif %}
 <a href="{% url 'greetings:create' %}">Create a New Greeting</a>
+<br>
+<p>~~~~~~~~~~</p>
+<p>Learn more about greetings here:</p>
+<a href="{% url 'greetings:meaning' %}">What are Greetings?</a>
